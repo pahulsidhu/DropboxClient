@@ -5,7 +5,7 @@ using System.Linq;
 
 public class DropboxV1
 {
- static string token = "Acess Token";
+ static string token = "Access Token";
  static void Main(string [] args)
     {
 	// Using the online compiler assuming command line arguments would be passed
