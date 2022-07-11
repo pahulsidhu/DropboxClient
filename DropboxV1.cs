@@ -28,7 +28,6 @@ public class DropboxV1
 			{
 				Console.WriteLine("file: {0} [path='{1}']", item.Name, item.PathLower);
 			}
-
         }
     }
 }
