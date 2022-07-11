@@ -17,17 +17,16 @@ public class DropboxV1
     {
        using (var dbx = new DropboxClient(token)) // recursive = true if all subfolders are required as well 
         {
-		    string folder = args.Length > 0 ? args[0] : string.Empty; // If sub-folder location is not mentioned in params assume root
-		    var list = await dbx.Files.ListFolderAsync(folder);
-            foreach (var item in list.Entries.Where(i => i.IsFolder))
-			{
-				Console.WriteLine("folder: {0} [path='{1}']", item.Name, item.PathLower);
-			}
-		   
-		   foreach (var item in list.Entries.Where(i => i.IsFile))
-			{
-				Console.WriteLine("file: {0} [path='{1}']", item.Name, item.PathLower);
-			}
+	       string folder = args.Length > 0 ? args[0] : string.Empty; // If sub-folder location is not mentioned in params assume root
+	       var list = await dbx.Files.ListFolderAsync(folder);
+               foreach (var item in list.Entries.Where(i => i.IsFolder))
+	       {
+		       Console.WriteLine("folder: {0} [path='{1}']", item.Name, item.PathLower);
+	       }
+	       foreach (var item in list.Entries.Where(i => i.IsFile))
+	       {
+		       Console.WriteLine("file: {0} [path='{1}']", item.Name, item.PathLower);
+	       }
         }
     }
 }
